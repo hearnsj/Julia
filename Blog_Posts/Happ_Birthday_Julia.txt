@@ -1,0 +1,11 @@
+﻿Happy Birthday Julia
+
+
+The Julia language reached the important milestone of a 1.0 release yesterday.
+During a party in the rather swish Institute for Engineering and Technology overlooking the Thames in London, the founders of the Julia language performed a live push of the 1.0 version to Gitbub.
+https://julialang.org/blog/2018/08/one-point-zero
+
+
+The significance is that the Julia language has often been criticised for changing the language in wauys which break old code at minor version number changes.
+The recent 0.7 version was intended as a preview of 1.0, ie there would be no breakign changeds between 0.7 and 1.0. Version 0.7 lasted around a month, and there was a lot of traffic on the Julia discussion board on how packages are being slowly updated to 0.7 compatibility.
+Now with version 1.0 we can look forward to a stable language - so if you have not looked at Julia yet this is the ideal time to try it.

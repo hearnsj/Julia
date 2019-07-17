@@ -1,0 +1,8 @@
+using Compat
+function pcumsum(A::AbstractMatrix)
+    S = similar(A);
+    Threads.@threads for i in Compat.axes(A,2)
+        @views cumsum!(S[:,i], A[:,i])
+    end
+    return S
+end

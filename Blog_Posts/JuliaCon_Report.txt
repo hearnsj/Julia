@@ -1,0 +1,46 @@
+﻿JuliaCon Report
+
+
+Julia Con 2018 took place at London University College and the Microsoft Reactor space in Hoxton last week. The conference saw the release of the 1.0 version of the language. 
+My main impression is that Julia is being used in production for a wide range of uses. Here is a small selection of keynotes and talks which impressed me. All of the conference talks are available in this YouTube playlist   https://www.youtube.com/playlist?list=PLP8iPy9hna6Qsq5_-zrg0NTwqDSDYtfQB
+Using Julia in a Multiuser Production Capital Modelling Environment
+The first keynote was presented by Tim Thornton of Aviva.
+This shows real production work at the financial company Aviva. Since they manage my pension fund I sincerely hope that Julia works well! Aviva wanted to internally develop a new risk model which had to be superfast, self-service for their business users, integrated with other systems and cloud native. They achieved this with a new system with around 4000 lines of Julia code. After a short development they were already exceeding the performance of a 200 server data centre using another proprietary code. The system is now in production, using an Excel (!) front end which is familiar to business users. The front end pulls data from a DynamoDB database and uses Spark.jl to distribute the calculations across a Soark cluster.
+You can watch the video of Tims presentation here https://youtu.be/_jx1VmWxgVY
+
+
+Tricks and Tips in Numerical Computing
+Prof. Nick Higham of Manchester University delivered and excellent keynote on numerical computing.
+
+
+One quote: A trick used three times becomes a standard technique  (George Polya)
+Nick discussed the increasing use of low precision arithmetic, which is available on GPUs etc.  Low precision gives you fast arithmetic, fast data movement, a lower memory footprint and lower power consumption.
+Slides here: http://bit.ly/tricks18
+View here: https://youtu.be/Q9OLOqEhc64
+The Rise of the Research Software Engineer
+Mike Croucher of the University of Leeds delivered an entertaining presentation on the new specialisation of the RSE.
+
+
+View here:  https://youtu.be/8ZSaAM8hhJ4
+
+
+
+
+Rather than an exhaustive list of talks I attended, I present a couple which have interest to HPC types.
+
+
+Parallel Computing with MPI-3 RMA and Julia
+Bart Janssens from the Belgian Royal Military Academy presented on his work with using Julia and MPI. The motivation for using MPI rather than Julia parallelism  is utilising the MPI on the cluster and the high performance interconnect.
+
+
+Watch here  https://youtu.be/2_zSJ4wJ8tg
+Pkg3 - The New Julia Package Manager
+Stefan Karpinski of Julia Computing delivered an overview of the new Julia package manager for version 1.0  This overcomes the shortcomings of the original package manager. Pkg3 paves the way for HPC system managers to install Julia cleanly on shared environments, with proper versioning of the installed packages. Please do have a look if you are deploying Julia. 
+Also of interest to anyone interested in using Julia on a government, military or commercial site, Julia Computing announced a new product - Julia Team. This will deploy Julia behind corporate firewalls or on systems isolated from the Internet.
+
+
+View here: https://youtu.be/GBi__3nF-rM
+Making Robots Walk with Julia
+Robin Deits from MIT CSAIL presented work on the ATLAS Robot which is being developed for rescue and disaster work.  Keeping a walkign robot balanced and upright is a computationally demanding task. As the control loop runs at 1000Hz they have a millisecond to run each computation. The program must avoid running the garbage collector during this computation, so the group work hard on avoiding allocations during the inner loop. Showing the dynamism of the Julia community, Jeff Bazanson was in the audience and promised a new language macro which will avoid allocations. So real time Julia? Perhaps!
+Software available here: http://www.juliarobotics.org/
+Slides: http://rdeits.github.com/juliacon-2018
